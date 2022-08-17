@@ -106,14 +106,14 @@ export default class MetaViuBillboard {
             response = await callResponse.json();
             let position;
             this.redirect_url[this.billboard_id] = response.redirect_url;
-            this.rotation = response.content.side_1.type == 'image' ? new Vector3(-360, 0, 360) : new Quaternion(0, 1.0, 0, 1);
+            this.rotation = response.content.side_1.type == 'image' ? Quaternion.Euler(180, 90, 0) : new Quaternion(0, 1.0, 0, 1);
             this.render_content(host, response.content.side_1.url, 'side1', new Transform({
                 position: new Vector3(0.05, 4.8, 0.3),
                 rotation: this.rotation,
                 scale: new Vector3(5.1, 2.9, 4)
             }), response.content.side_1.type)
 
-            this.rotation = response.content.side_2.type == 'image' ? new Vector3(360, 0, 360) : new Quaternion(0, -1, 0, 1);
+            this.rotation = response.content.side_2.type == 'image' ? Quaternion.Euler(180, 270, 0) : new Quaternion(0, -1, 0, 1);
             this.render_content(host, response.content.side_2.url, 'side2', new Transform({
                 position: new Vector3(-0.05, 4.8, 0.3),
                 rotation: this.rotation,
