@@ -5,9 +5,9 @@
     "navmapThumbnail": "images/scene-thumbnail.png",
     "favicon": "favicon_asset"
   },
-  "owner": "",
+  "owner": "MetaViu",
   "contact": {
-    "name": "Vakho",
+    "name": "Vakho Asatiani",
     "email": "vakho@metaviu.io"
   },
   "main": "bin/game.js",
